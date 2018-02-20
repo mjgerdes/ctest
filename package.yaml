@@ -1,0 +1,54 @@
+name:                ctest
+version:             0.1.0.0
+github:              "mjgerdes/ctest"
+license:             GPL2
+author:              "marius"
+maintainer:          "mgerdes@uni-potsdam.de"
+copyright:           "None"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+- data/ctests.txt
+- data/gold.txt
+- data/tiger
+- data/tigerout.txt
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Language
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on Github at <https://github.com/mjgerdes/ctest#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- containers
+- text
+- filepath
+library:
+  source-dirs: src
+
+executables:
+  ctest:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - ctest
+
+tests:
+  ctest-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - ctest
