@@ -11,8 +11,7 @@ extra-source-files:
 - ChangeLog.md
 - data/ctests.txt
 - data/gold.txt
-- data/tiger
-- data/tigerout.txt
+- data/corpus.txt
 
 # Metadata used when publishing your package
 # synopsis:            Short description of your package
